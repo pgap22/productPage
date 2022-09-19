@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
+
+  <title>Frontend Mentor | E-commerce product page</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="app.js"></script>
+</head>
+
+<body>
+
+  <header class="md:flex md:justify-center">
+    <div class="flex justify-between p-5 items-center md:p-10 md:max-w-7xl md:border-b md:w-full md:self-center">
+      <div class="flex gap-2 items-center md:w-full">
+        <img data-close class="w-5 h-5 md:hidden" src="./images/icon-menu.svg" alt="menu" />
+        <a href="/">
+          <img class="min-w-fit h-5 mb-1 md:h-6" src="./images/logo.svg" alt="logo" />
+        </a>
+        <ul class="hidden md:flex gap-6 pl-7">
+          <li class="text-Darkgrayishblue relative select-none group cursor-pointer">
+            Collections
+            <div
+              class="opacity-0 group-hover:opacity-100 transition-all duration-200 ease-in border-2 absolute right-0 left-0 -bottom-14 border-Orange">
+            </div>
+          </li>
+          <li class="text-Darkgrayishblue relative select-none group cursor-pointer">
+            Men
+            <div
+              class="opacity-0 group-hover:opacity-100 transition-all duration-200 ease-in border-2 absolute right-0 left-0 -bottom-14 border-Orange">
+            </div>
+          </li>
+          <li class="text-Darkgrayishblue relative select-none group cursor-pointer">
+            Women
+            <div
+              class="opacity-0 group-hover:opacity-100 transition-all duration-200 ease-in border-2 absolute right-0 left-0 -bottom-14 border-Orange">
+            </div>
+          </li>
+          <li class="text-Darkgrayishblue relative select-none group cursor-pointer">
+            About
+            <div
+              class="opacity-0 group-hover:opacity-100 transition-all duration-200 ease-in border-2 absolute right-0 left-0 -bottom-14 border-Orange">
+            </div>
+          </li>
+          <li class="text-Darkgrayishblue relative select-none group cursor-pointer">
+            Contact
+            <div
+              class="opacity-0 group-hover:opacity-100 transition-all duration-200 ease-in border-2 absolute right-0 left-0 -bottom-14 border-Orange">
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="flex gap-5 lg:gap-12 items-center md:relative">
+        <div class="w-fit md:w-10 mx-1 relative">
+          <img id="cart" cart="juan" class="cursor-pointer" src="./images/icon-cart.svg" alt="cart" />
+          <div id="shop-counter"
+            class="hidden absolute top-0 -m-1.5 right-0 text-[8px] md:text-[10px] md:px-2 bg-Orange text-white rounded-md font-bold px-1.5">
+            0
+          </div>
+        </div>
+        <img
+          class="w-6 h-6 md:w-12 md:h-12 outline outline-2 outline-transparent rounded-full hover:outline-Orange hover:outline-2 hover:transition-all hover:duration-250"
+          src="./images/image-avatar.png" alt="avatar" />
+
+        <!-- Cart component -->
+        <div id="cart-component"
+          class="absolute z-20 bg-white left-0 right-0 mx-2 rounded-lg top-[72px] hide-cart md:top-12 md:-left-[350%] lg:-left-[270%] md:right-auto md:w-96 md:-translate-x-3/2 2xl:left-1/2 2xl:-translate-x-1/2">
+          <div class="border-b p-4 py-5">
+            <h3 class="font-bold">Cart</h3>
+          </div>
+          <div id="cart-content" class="grid place-content-center grid-cols-1 min-h-[170px] shadow-lg"></div>
+        </div>
+      </div>
+
+      <div data-menu
+        class="hide-menu duration-200 transition-all ease-linear fixed top-0 bg-white max-w-sm left-0 w-4/6 p-4 z-50 min-h-full flex flex-col gap-11">
+        <img data-close class="w-4 max-w-sm pt-2 ml-1" src="./images/icon-close.svg" alt="icon-close" />
+
+        <ul class="flex flex-col gap-3">
+          <li class="font-bold text-lg">Collections</li>
+          <li class="font-bold text-lg">Men</li>
+          <li class="font-bold text-lg">Women</li>
+          <li class="font-bold text-lg">About</li>
+          <li class="font-bold text-lg">Contact</li>
+        </ul>
+      </div>
+
+      <div data-close data-bg class="invisible bg-black fixed min-h-screen min-w-full z-20 opacity-70 top-0"></div>
+    </div>
+  </header>
+
+  <main class="md:flex md:justify-center md:mt-11">
+    <div class="md:grid md:grid-cols-2 md:max-w-5xl md:items-center md:m-4 lg:gap-20 md:gap-6">
+      <div class="md:flex md:flex-col md:gap-4">
+        <div class="relative z-0">
+          <div data-image id="previous"
+            class="bg-white absolute ml-3 w-10 h-10 top-1/2 -translate-y-1/2 rounded-full select-none md:hidden">
+            <img class="absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-2/3" src="./images/icon-previous.svg"
+              alt="" />
+          </div>
+
+          <img id="image-shop" class="md:rounded-xl cursor-pointer" src="./images/image-product-1.jpg" alt="image" />
+
+          <div data-image id="next"
+            class="bg-white absolute mr-3 w-10 h-10 top-1/2 -translate-y-1/2 right-0 rounded-full select-none md:hidden">
+            <img class="absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2" src="./images/icon-next.svg"
+              alt="" />
+          </div>
+        </div>
+        <div id="img-t" class="hidden md:flex justify-between my-2">
+          <div>
+            <img class="md:w-20 lg:w-24 rounded-lg hover:opacity-50 transition-all ease-linear duration-150"
+              src="./images/image-product-1-thumbnail.jpg" alt="image-product-1-thumbnail" />
+          </div>
+          <div>
+            <img class="md:w-20 lg:w-24 rounded-lg hover:opacity-50 transition-all ease-linear duration-150"
+              src="./images/image-product-2-thumbnail.jpg" alt="image-product-1-thumbnail" />
+          </div>
+          <div>
+            <img class="md:w-20 lg:w-24 rounded-lg hover:opacity-50 transition-all ease-linear duration-150"
+              src="./images/image-product-3-thumbnail.jpg" alt="image-product-1-thumbnail" />
+          </div>
+          <div>
+            <img class="md:w-20 lg:w-24 rounded-lg hover:opacity-50 transition-all ease-linear duration-150"
+              src="./images/image-product-4-thumbnail.jpg" alt="image-product-1-thumbnail" />
+          </div>
+        </div>
+      </div>
+
+      <div class="p-4">
+        <div class="flex flex-col gap-3 md:gap-8">
+          <p class="text-Orange uppercase text-xs tracking-widest font-bold md:text-base">
+            Sneaker Company
+          </p>
+          <h2 class="font-bold text-2xl md:text-5xl">
+            Fall Limited Edition Sneakers
+          </h2>
+          <p class="text-Darkgrayishblue text-sm md:text-lg">
+            These low-profile sneakers are your perfect casual wear companion.
+            Featuring a durable rubber outer sole, they’ll withstand
+            everything the weather can offer.
+          </p>
+
+          <div class="flex items-center justify-between md:flex-col md:items-start">
+            <div class="flex items-center gap-3">
+              <p class="text-Veryvarkblue text-xl font-bold md:text-2xl">
+                $125.00
+              </p>
+              <p class="px-1.5 py-0.5 rounded-md bg-Paleorange text-Orange font-bold text-sm md:text-lg">
+                50%
+              </p>
+            </div>
+            <p class="text-Grayishblue line-through font-bold">$250.00</p>
+          </div>
+
+          <div class="flex flex-col gap-3 md:grid md:grid-cols-[.5fr_1fr] select-none">
+            <div class="bg-Lightgrayishblue p-3 rounded-lg grid grid-cols-[max-content_1fr_max-content] items-center">
+              <img data-shop class="cursor-pointer" id="minus" src="./images/icon-minus.svg" alt="minus" />
+              <div class="flex justify-center">
+                <p id="count" class="font-bold text-Veryvarkblue self-center">
+                  0
+                </p>
+              </div>
+              <img data-shop class="cursor-pointer" id="add" src="./images/icon-plus.svg" alt="add" />
+            </div>
+
+            <div id="add-cart"
+              class="bg-Orange flex justify-center p-3 rounded-lg shadow-sm shadow-Orange cursor-pointer select-none gap-2">
+              <img class="" src="./images/icon-cart-white.svg" alt="cart" />
+              <p class="font-bold text-white">Add to cart</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</body>
+
+</html>

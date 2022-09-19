@@ -1,0 +1,24 @@
+*{
+    @apply font-KumbhSans;
+}
+.hide-menu{
+     @apply -translate-x-full;
+}
+.hide-cart{
+    @apply -translate-y-[200%] ;
+}
+.cart-pop{
+    @apply duration-150 ease-linear;
+}
+.selected{
+    @apply outline outline-[3px] outline-Orange rounded-lg object-cover border-spacing-0
+}
+.light-sel img{
+    @apply outline outline-[3px] outline-Orange rounded-lg object-cover border-spacing-0;
+}
+.light-sel div{
+    @apply opacity-40;
+}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
